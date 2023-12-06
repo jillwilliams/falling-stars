@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Falling Stars</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=WindSong&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Consolas&family=Rancho&family=Caveat&family=Creepster&family=Quintessential&family=Fruktur&family=Rye&family=UnifrakturMaguntia&family=Kranky&family=Nosifer&family=Noto+Sans+Rubic&family=Noto+Color+Emoji&family=Dancing+Script&family=Fuggles&family=Indie+Flower&family=Kalam&family=Montserrat:wght@100&family=Permanent+Marker&family=Poppins&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <!-- keep this -->
+        <script src="https://kit.fontawesome.com/9f71dab2a2.js" crossorigin="anonymous"></script>
+        <!-- keep this -->
+        <link rel="stylesheet" href="./styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <script>
+            function stars() {
+                let e = document.createElement('div');
+                e.setAttribute('class','star');
+                document.body.appendChild(e);
+                e.style.left = Math.random() * + innerWidth + 'px';
+
+                let size = Math.random() * 12;
+                let duration = Math.random() * 3;
+
+                e.style.fontSize = 12 + size + 'px';
+                e.style.animationDuration = 2 + duration + 's';
+
+                setTimeout(function() {
+                    document.body.removeChild(e);
+                },5000);
+            }
+            setInterval(function() {
+                stars();
+            },100);
+        </script>
+    </body>
+</html>
